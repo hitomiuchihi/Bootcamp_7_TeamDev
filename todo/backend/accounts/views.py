@@ -32,7 +32,8 @@ def register_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('some_view_name')  # 登録後のリダイレクト先
+                return redirect('http://localhost:3003')  # 登録後のリダイレクト先
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
+
