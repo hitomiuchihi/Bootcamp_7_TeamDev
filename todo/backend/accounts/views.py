@@ -13,7 +13,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('some_view_name')  # ログイン後のリダイレクト先
+                return redirect('http://localhost:3003')  # ログイン後のリダイレクト先
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', {'form': form})
