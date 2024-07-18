@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.views import LoginView
 
 def login_view(request):
     if request.method == 'POST':
@@ -36,3 +37,20 @@ def register_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
+
+
+# login-page
+class CustomLoginView(LoginView):
+    template_name = 'registration/login.html'
+
+# logout
+def logout_view(request):
+    pass
+
+#sign up
+def signup(request):
+    pass
+
+# profile-page
+def profile():
+    pass
